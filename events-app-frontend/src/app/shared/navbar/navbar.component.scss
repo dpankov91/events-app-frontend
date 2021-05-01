@@ -4,5 +4,33 @@
   font-size: 20px;
   font-family: 'Slabo 27px', serif;
   text-align: center;
+  color: black;
   cursor: pointer;
+  margin: 5px;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar a:hover{
+  border-bottom: 2px solid #181174;
+}
+
+.active a {
+  background: #005AA1;
+  color: #fff !important;
+}
+
+.linksBar{
+  width: 100%;
+}
+
+.navLogo{
+  height: 45px;
+  width: 200px;
+  margin-left: 40px
+}
+
+@media only screen and (max-width: 528px) {
+    .icon {
+      margin-right: 50px;
+    }
 }
