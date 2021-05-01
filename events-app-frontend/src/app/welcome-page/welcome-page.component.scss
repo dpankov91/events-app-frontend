@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Lora:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Lora:ital@1&family=Raleway&display=swap');
+
+
+.carousel-inner > .carousel-item > img{
+  height: 300px;
+  width: 600px;
+}
+
+.welcomeTextDiv{
+  background: #005AA1;
+  color: #fff;
+  text-align:center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+#textP{
+  font-family: 'Dosis', sans-serif;
+  font-size: 25px;
+}
+
+#textHead{
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.gap100{
+  padding: 30px 0px;
+}
+
+.smed i{
+  color: #fff;
+  font-size: 40px;
+  margin: 10px;
+  padding-top: 10px;
+}
