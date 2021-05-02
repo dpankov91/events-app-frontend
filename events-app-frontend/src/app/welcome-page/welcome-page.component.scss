@@ -3,15 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
 .carousel-inner > .carousel-item > img{
-  height: 300px;
-  width: 600px;
+  height: 260px;
+  width: 100%;
 }
-
+.carus{
+  width: 100%;
+}
 .container {
   max-width: 1400px;
   width: 100%;
 }
-
+.card-body{
+  height: 240px;
+}
 .welcomeTextDiv{
   background: #005AA1;
   color: #fff;
@@ -20,17 +24,14 @@
   align-items: center;
   justify-content: center
 }
-
 #textP{
   font-family: 'PT Serif', serif;
-  font-size: 25px;
+  font-size: 22px;
 }
-
 .gap100{
   padding-top: 20px;
   padding-bottom: 10px;
 }
-
 .headers{
   text-align: center;
   font-size: 30px;

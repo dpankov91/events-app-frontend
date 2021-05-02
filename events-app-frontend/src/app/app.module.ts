@@ -7,13 +7,15 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { CreateEventPageComponent } from './create-event-page/create-event-page.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     WelcomePageComponent,
-    CreateEventPageComponent
+    CreateEventPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
