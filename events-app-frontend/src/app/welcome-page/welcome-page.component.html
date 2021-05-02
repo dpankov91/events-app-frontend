@@ -47,7 +47,7 @@
               <span class="name">{{event.eventName}}</span>
               <span class="date">{{event.eventDate | date:'dd.MM.yyyy'}}</span>
               <span><a href="#">Osavoitjad</a></span>
-              <span (click)="delete(event.id)"><img src="assets/remove.svg" id="deleteBtn"></span>
+              <span (click)="delete(event.id)"><img src="assets/remove.svg" class="deleteBtn"></span>
             </li>
           </ul>
       </div>
@@ -66,7 +66,7 @@
                 <span class="name">{{event.eventName}}</span>
                 <span class="date">{{event.eventDate | date:'dd.MM.yyyy'}}</span>
                 <span><a href="#">Osavoitjad</a></span>
-                <span (click)="delete(event.id)"><img src="assets/remove.svg" id="deleteBtn"></span>
+                <span (click)="delete(event.id)"><img src="assets/remove.svg" class="deleteBtn"></span>
               </li>
             </ul>
           </div>

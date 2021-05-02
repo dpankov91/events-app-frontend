@@ -26,7 +26,7 @@ export class WelcomePageComponent implements OnInit {
     console.log(latest_date)
     console.log(this.allEvents)
     this.futureEvents = this.allEvents.filter(event =>
-      this.datePipe.transform(event.eventDate, 'yyyy-MM-dd').valueOf() > latest_date.valueOf())
+      this.datePipe.transform(event.eventDate, 'yyyy-MM-dd').valueOf() >= latest_date.valueOf())
     this.pastEvents = this.allEvents.filter(event =>
       this.datePipe.transform(event.eventDate, 'yyyy-MM-dd').valueOf() < latest_date.valueOf() )
   }
