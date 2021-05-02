@@ -38,5 +38,36 @@
   font-family: 'PT Serif', serif;
 }
 
+ul{
+  position: relative;
+  list-style: decimal;
+  font-size: 18px;
+}
+li{
+  margin: 5px;
+}
+ul li span:nth-child(1){
+  display: inline-block;
+  width: 280px;
+  padding-left: 10px;
+}
+ul li span:nth-child(2){
+  display: inline-block;
+  width: 150px;
+}
+ul li span:nth-child(3){
+  display: inline-block;
+  width: 100px;
+}
+ul li span:nth-child(4){
+  cursor: pointer;
+}
+
+#deleteBtn {
+  height: 20px;
+  width: 20px;
+}
+
+
 
 

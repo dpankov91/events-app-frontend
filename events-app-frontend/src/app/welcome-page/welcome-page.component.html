@@ -41,14 +41,16 @@
         <h4 class="headers">Tulevased uritused</h4>
       </div>
       <div class="card-body">
+        <div *ngIf="allEvents">
           <ul>
-            <li>
-              1. Rakvere fairy 19.05.2021 participants(20)
-            </li>
-            <li>
-              1. Viljandi matkamine 21.05.2021 participants(6)
+            <li  *ngFor="let event of allEvents">
+              <span class="name">{{event.eventName}}</span>
+              <span class="date">{{event.eventDate | date:'dd.MM.yyyy'}}</span>
+              <span><a href="#">Osavoitjad</a></span>
+              <span (click)="delete(event.id)"><img src="assets/remove.svg" id="deleteBtn"></span>
             </li>
           </ul>
+      </div>
       </div>
     </div>
   </div>
