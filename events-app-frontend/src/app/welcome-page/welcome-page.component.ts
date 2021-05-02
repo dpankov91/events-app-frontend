@@ -20,13 +20,15 @@ export class WelcomePageComponent implements OnInit {
     this.refresh()
   }
 
-  refresh(): void {
-    this.eventService.getAllEvents().subscribe(evLst => {this.allEvents = evLst;})
+  async refresh(): Promise<void> {
+    await this.eventService.getAllEvents().then(evLst => {this.allEvents = evLst});
     let latest_date = this.datePipe.transform(this.today, 'yyyy-MM-dd');
     console.log(latest_date)
     console.log(this.allEvents)
     this.futureEvents = this.allEvents.filter(event =>
-      this.datePipe.transform(event.eventDate, 'yyyy-MM-dd').valueOf() > latest_date.valueOf() )
+      this.datePipe.transform(event.eventDate, 'yyyy-MM-dd').valueOf() > latest_date.valueOf())
+    this.pastEvents = this.allEvents.filter(event =>
+      this.datePipe.transform(event.eventDate, 'yyyy-MM-dd').valueOf() < latest_date.valueOf() )
   }
 
   delete(id: number) {

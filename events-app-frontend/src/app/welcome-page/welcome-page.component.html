@@ -41,9 +41,9 @@
         <h4 class="headers">Tulevased uritused</h4>
       </div>
       <div class="card-body">
-        <div *ngIf="allEvents">
+        <div *ngIf="futureEvents">
           <ul>
-            <li  *ngFor="let event of allEvents">
+            <li *ngFor="let event of futureEvents">
               <span class="name">{{event.eventName}}</span>
               <span class="date">{{event.eventDate | date:'dd.MM.yyyy'}}</span>
               <span><a href="#">Osavoitjad</a></span>
@@ -59,18 +59,17 @@
         <div class="card-header">
           <h4 class="headers">Toimunud uritused</h4>
         </div>
-        <div class="card-body ">
-          <ul>
-            <li>
-              1. Viljandi matkamine 21.05.2021 participants(6)
-            </li>
-            <li>
-              1. Viljandi matkamine 21.05.2021 participants(6)
-            </li>
-            <li>
-              1. Viljandi matkamine 21.05.2021 participants(6)
-            </li>
-          </ul>
+        <div class="card-body">
+          <div *ngIf="pastEvents">
+            <ul>
+              <li *ngFor="let event of pastEvents">
+                <span class="name">{{event.eventName}}</span>
+                <span class="date">{{event.eventDate | date:'dd.MM.yyyy'}}</span>
+                <span><a href="#">Osavoitjad</a></span>
+                <span (click)="delete(event.id)"><img src="assets/remove.svg" id="deleteBtn"></span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

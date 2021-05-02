@@ -12,8 +12,16 @@ export class EventService {
 
   constructor(private http: HttpClient) { }
 
-  getAllEvents(): Observable<Event[]> {
-    return this.http.get<Event[]>(this.apiUrl);
+  async getAllEvents(): Promise<Event[]> {
+    const uspromise = await this.http.get<Event[]>(this.apiUrl).toPromise()
+    return uspromise.map(a=>{
+      console.log(a);
+      const eventName = a.eventName;
+      const eventDate = a.eventDate;
+      const place = a.place;
+      const additionalInfo = a.additionalInfo;
+    return {eventName, eventDate, place, additionalInfo} as Event;
+    })
   }
 
   deleteEvent(id: number): Observable<any>{
