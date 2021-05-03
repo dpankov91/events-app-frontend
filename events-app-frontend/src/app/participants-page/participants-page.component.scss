@@ -45,24 +45,25 @@ ul li span:nth-child(2){
 
 ul li span1:nth-child(1){
   display: inline-block;
-  width: 100px;
+  width: 180px;
   padding-left: 10px;
 }
 ul li span1:nth-child(2){
   display: inline-block;
-  width: 120px;
+  width: 140px;
 }
 ul li span1:nth-child(3){
   display: inline-block;
-  width: 100px;
+  width: 80px;
 }
 ul li span1:nth-child(4) {
-  padding-left: 20px;
   display: inline-block;
   width: 80px;
 }
 .partUl{
   list-style: decimal;
+  margin-top: 7px;
+  margin-left: 10px;
 }
 .delete{
   color: red;

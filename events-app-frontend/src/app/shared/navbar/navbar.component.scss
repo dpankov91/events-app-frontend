@@ -9,7 +9,6 @@
   margin: 5px;
   border-bottom: 2px solid transparent;
 }
-
 .navBor{
   border-bottom: 1px solid gainsboro;
 }
@@ -18,7 +17,7 @@
   border-bottom: 2px solid #181174;
 }
 
-.active a {
+a.active {
   background: #005AA1;
   color: #fff !important;
 }

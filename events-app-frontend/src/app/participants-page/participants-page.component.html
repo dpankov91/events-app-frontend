@@ -29,12 +29,17 @@
         <span class="participantsTable">Osavõitjad: </span>
         <ul class="partUl">
            <li *ngFor="let person of selectedEventPersons">
-             <span1 class="name">{{person.firstName}} </span1>
-             <span1 class="last-name">{{person.lastName}}</span1>
+             <span1 class="name">{{person.firstName}} {{person.lastName}}</span1>
              <span1 class="last-name">{{person.idNumber}}</span1>
              <span1 class="name"><a routerLink="/participants">Vaata</a></span1>
              <span1 class="delete" (click)="deletePerson(person.id)">Kustuta</span1>
            </li>
+          <li *ngFor="let company of selectedEventCompanies">
+            <span1 class="name">{{company.companyName}} </span1>
+            <span1 class="last-name">{{company.companyCode}}</span1>
+            <span1 class="name"><a routerLink="/participants">Vaata</a></span1>
+            <span1 class="delete" (click)="deleteCompany(company.id)">Kustuta</span1>
+          </li>
         </ul>
       </li>
       </div>

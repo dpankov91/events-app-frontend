@@ -6,6 +6,8 @@ import {Observable} from "rxjs";
 import {EventModel} from "../shared/models/eventModel";
 import {PersonModel} from "../shared/models/personModel";
 import {PersonService} from "../shared/services/person.service";
+import {CompanyService} from "../shared/services/company.service";
+import {CompanyModel} from "../shared/models/companyModel";
 
 @Component({
   selector: 'app-participants-page',
@@ -16,12 +18,15 @@ export class ParticipantsPageComponent implements OnInit {
 
   allPersons: PersonModel[] = []
   selectedEventPersons: PersonModel[] = []
+  allCompanies: CompanyModel[] = []
+  selectedEventCompanies: CompanyModel[] = []
   event: EventModel;
   private selectedEventId: number;
 
 
   constructor(private eventService: EventService, private welcomeComponent: WelcomePageComponent,
-              private route: ActivatedRoute, private personService: PersonService) {}
+              private route: ActivatedRoute, private personService: PersonService,
+              private companyService: CompanyService) {}
 
   ngOnInit(): void {
     this.refresh();
@@ -37,12 +42,21 @@ export class ParticipantsPageComponent implements OnInit {
     await this.personService.getAllPersons().then(pLst => {this.allPersons = pLst});
     this.selectedEventPersons = this.allPersons.filter(person =>
       person.eventId == id)
-    console.log(this.selectedEventPersons)
-
+    await this.companyService.getAllCompanies().then(cLst => {this.allCompanies = cLst});
+    this.selectedEventCompanies = this.allCompanies.filter(company =>
+      company.eventId == id)
+    console.log(this.selectedEventCompanies)
   }
 
   deletePerson(id: number) {
     this.personService.deletePerson(id)
+      .subscribe(() => {
+        this.refresh();
+      });
+  }
+
+  deleteCompany(id: number) {
+    this.companyService.deleteCompany(id)
       .subscribe(() => {
         this.refresh();
       });
