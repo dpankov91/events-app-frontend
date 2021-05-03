@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from "../shared/services/event.service";
-import {Event} from "../shared/models/event";
+import {EventModel} from "../shared/models/eventModel";
 import {DatePipe} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-welcome-page',
@@ -9,12 +10,13 @@ import {DatePipe} from "@angular/common";
   styleUrls: ['./welcome-page.component.scss']
 })
 export class WelcomePageComponent implements OnInit {
-
-  allEvents: Event[] = []
-  futureEvents: Event[] = []
-  pastEvents: Event[] = []
+  selectedEventId: number = null;
+  allEvents: EventModel[] = []
+  futureEvents: EventModel[] = []
+  pastEvents: EventModel[] = []
   today = new Date();
-  constructor(private eventService: EventService, public datePipe: DatePipe) { }
+  constructor(private eventService: EventService, public datePipe: DatePipe,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.refresh()
@@ -34,5 +36,9 @@ export class WelcomePageComponent implements OnInit {
       .subscribe(() => {
         this.refresh();
       });
+  }
+
+  selectEvent(event: EventModel) {
+    this.router.navigate(['/participants', event.id])
   }
 }

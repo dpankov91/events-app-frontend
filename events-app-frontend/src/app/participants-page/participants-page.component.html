@@ -12,29 +12,32 @@
   <div class="participants">
     <h2>Osavõitjad</h2>
     <ul class="mainUl">
-      <li>
+      <div *ngIf="event">
+      <li class="liPart">
         <span class="name">Urituse nimi: </span>
-        <span class="gottenName">Jalgpall</span>
+        <span class="gottenName">{{event.eventName}}</span>
       </li>
-      <li>
+      <li class="liPart">
         <span class="date">Toimumisaeg: </span>
-        <span class="gottenDate">14.02.2021</span>
+        <span class="gottenDate">{{event.eventDate | date:'dd.MM.yyyy'}}</span>
       </li>
-      <li>
+      <li class="liPart">
         <span class="place">Koht: </span>
-        <span class="gottenPlace">Tallinn</span>
+        <span class="gottenPlace">{{event.place}}</span>
       </li>
-      <li>
+      <li class="liPart">
         <span class="participantsTable">Osavõitjad: </span>
-        <ul>
-           <li>
-             <span class="name">Mihkel: </span>
-             <span class="idcode">3800001</span>
-             <span class="name"><a routerLink="/participants">Vaata</a></span>
-             <span class="delete" (click)="delete(event.id)">Kustuta</span>
+        <ul class="partUl">
+           <li *ngFor="let person of selectedEventPersons">
+             <span1 class="name">{{person.firstName}} </span1>
+             <span1 class="last-name">{{person.lastName}}</span1>
+             <span1 class="last-name">{{person.idNumber}}</span1>
+             <span1 class="name"><a routerLink="/participants">Vaata</a></span1>
+             <span1 class="delete" (click)="deletePerson(person.id)">Kustuta</span1>
            </li>
         </ul>
       </li>
+      </div>
     </ul>
   </div>
 </div>

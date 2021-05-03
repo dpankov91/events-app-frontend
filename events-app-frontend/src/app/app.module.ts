@@ -30,7 +30,7 @@ import { ParticipantsPageComponent } from './participants-page/participants-page
         CommonModule,
         ReactiveFormsModule
     ],
-  providers: [DatePipe],
+  providers: [DatePipe, WelcomePageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

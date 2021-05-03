@@ -7,7 +7,7 @@ import {ParticipantsPageComponent} from "./participants-page/participants-page.c
 const routes: Routes = [
   {path: '', component: WelcomePageComponent},
   {path: 'create-event', component: CreateEventPageComponent},
-  {path: 'participants', component: ParticipantsPageComponent}
+  {path: 'participants/:id', component: ParticipantsPageComponent}
 ];
 
 @NgModule({
