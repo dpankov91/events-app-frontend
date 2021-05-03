@@ -11,6 +11,7 @@ import {CommonModule, DatePipe} from "@angular/common";
 import {CreateEventPageComponent} from "./create-event-page/create-event-page.component";
 import {WelcomePageComponent} from "./welcome-page/welcome-page.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import { ParticipantsPageComponent } from './participants-page/participants-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     NavbarComponent,
     FooterComponent,
     CreateEventPageComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    ParticipantsPageComponent
   ],
     imports: [
         BrowserModule,

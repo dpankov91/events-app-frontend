@@ -19,7 +19,7 @@
     <label for="additional-info">Lisainfo: </label>
     <textarea id="additional-info" formControlName="additionalInfo"></textarea>
     <div>
-      <button type="button" class="btn btn btnBack">Tagasi</button>
+      <button (click)="goBack()" class="btn btn btnBack" type="button">Tagasi</button>
       <button type="submit" class="btn btn btnAdd">Lisa</button>
     </div>
   </form>

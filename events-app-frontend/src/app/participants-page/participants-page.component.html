@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row upperDiv">
+    <div class="col-md-4 headText" style="background: #005AA1;">
+      <h1>Osavõitjad</h1>
+    </div>
+    <div class="col-md-8 p-0">
+      <img src="assets/libled.jpg" class="fixed-content">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="participants">
+    <h2>Osavõitjad</h2>
+    <ul class="mainUl">
+      <li>
+        <span class="name">Urituse nimi: </span>
+        <span class="gottenName">Jalgpall</span>
+      </li>
+      <li>
+        <span class="date">Toimumisaeg: </span>
+        <span class="gottenDate">14.02.2021</span>
+      </li>
+      <li>
+        <span class="place">Koht: </span>
+        <span class="gottenPlace">Tallinn</span>
+      </li>
+      <li>
+        <span class="participantsTable">Osavõitjad: </span>
+        <ul>
+           <li>
+             <span class="name">Mihkel: </span>
+             <span class="idcode">3800001</span>
+             <span class="name"><a routerLink="/participants">Vaata</a></span>
+             <span class="delete" (click)="delete(event.id)">Kustuta</span>
+           </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

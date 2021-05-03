@@ -30,4 +30,8 @@ export class CreateEventPageComponent implements OnInit {
         this.router.navigateByUrl('');
       });
   }
+
+  goBack() {
+    this.router.navigateByUrl('');
+  }
 }
