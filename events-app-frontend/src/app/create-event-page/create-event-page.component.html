@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row upperDiv">
     <div class="col-md-4 headText" style="background: #005AA1;">
-      <h1>Urituse Lisamine</h1>
+      <h1>Ürituse Lisamine</h1>
       </div>
     <div class="col-md-8 p-0">
       <img src="assets/libled.jpg" class="fixed-content">
@@ -9,8 +9,18 @@
   </div>
 </div>
 <div class="container">
-  <form>
-    <label>Event Name</label>
-    <input type="text" id="event-name">
+  <form class="submission-form" [formGroup]="eventForm" (ngSubmit)="saveEvent()">
+    <label for="event-name">Ürituse nimi: </label>
+    <input type="text" id="event-name" formControlName="eventName">
+    <label for="event-date">Toimumisaeg: </label>
+    <input type="date" id="event-date" formControlName="eventDate">
+    <label for="event-place">Koht: </label>
+    <input type="text" id="event-place" formControlName="place">
+    <label for="additional-info">Lisainfo: </label>
+    <textarea id="additional-info" formControlName="additionalInfo"></textarea>
+    <div>
+      <button type="button" class="btn btn btnBack">Tagasi</button>
+      <button type="submit" class="btn btn btnAdd">Lisa</button>
+    </div>
   </form>
 </div>

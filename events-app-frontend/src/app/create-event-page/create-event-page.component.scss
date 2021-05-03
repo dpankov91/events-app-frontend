@@ -1,7 +1,6 @@
 .upperDiv{
   height: 100px;
   width: 100%;
-  background: red;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -17,4 +16,36 @@
   justify-content: center;
   padding-top: 23px;
   color: #ffffff;
+}
+.submission-form{
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  label{
+    display: block;
+    padding: .5rem 0 0px;
+  }
+  input, textarea{
+    display: block;
+    width: 100%;
+  }
+}
+.btnAdd{
+  margin: 10px 5px;
+  width: 80px;
+  background: #005AA1;
+  color: #ffffff;
+}
+.btnAdd:hover{
+  background: #6D93D1;
+  color: black;
+}
+.btnBack:hover{
+  background: #7A7676;
+  color: #ffffff;
+}
+.btnBack{
+  margin: 5px;
+  width: 80px;
+  background: #C9C3C1;
 }

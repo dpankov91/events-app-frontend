@@ -15,7 +15,7 @@ export class EventService {
   async getAllEvents(): Promise<Event[]> {
     const uspromise = await this.http.get<Event[]>(this.apiUrl).toPromise()
     return uspromise.map(a=>{
-      console.log(a);
+      // console.log(a);
       const id = a.id
       const eventName = a.eventName;
       const eventDate = a.eventDate;
@@ -27,5 +27,9 @@ export class EventService {
 
   deleteEvent(id: number): Observable<any>{
     return this.http.delete(this.apiUrl + '/' + id);
+  }
+
+  createEvent(event: Event): Observable<Event> {
+    return this.http.post<Event>(this.apiUrl, event);
   }
 }
