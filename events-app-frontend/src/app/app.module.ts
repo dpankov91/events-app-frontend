@@ -5,25 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { WelcomePageComponent } from './welcome-page/welcome-page.component';
-import { CreateEventPageComponent } from './create-event-page/create-event-page.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
-import {DatePipe} from "@angular/common";
+import {CommonModule, DatePipe} from "@angular/common";
+import {CreateEventPageComponent} from "./create-event-page/create-event-page.component";
+import {WelcomePageComponent} from "./welcome-page/welcome-page.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    WelcomePageComponent,
+    FooterComponent,
     CreateEventPageComponent,
-    FooterComponent
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

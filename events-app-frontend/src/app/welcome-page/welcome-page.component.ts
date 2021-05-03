@@ -23,8 +23,6 @@ export class WelcomePageComponent implements OnInit {
   async refresh(): Promise<void> {
     await this.eventService.getAllEvents().then(evLst => {this.allEvents = evLst});
     let latest_date = this.datePipe.transform(this.today, 'yyyy-MM-dd');
-    console.log(latest_date)
-    console.log(this.allEvents)
     this.futureEvents = this.allEvents.filter(event =>
       this.datePipe.transform(event.eventDate, 'yyyy-MM-dd').valueOf() >= latest_date.valueOf())
     this.pastEvents = this.allEvents.filter(event =>
@@ -33,8 +31,7 @@ export class WelcomePageComponent implements OnInit {
 
   delete(id: number) {
     this.eventService.deleteEvent(id)
-      .subscribe(message => {
-        console.log('Deleted user, got message:' + message + id);
+      .subscribe(() => {
         this.refresh();
       });
   }

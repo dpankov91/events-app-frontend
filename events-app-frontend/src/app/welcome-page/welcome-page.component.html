@@ -5,7 +5,7 @@
         backgrounds and play around to find best
         option for you. Make your house look pretty and stylish!</p>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 p-0">
       <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -40,11 +40,12 @@
       <div class="card-header">
         <h4 class="headers">Tulevased uritused</h4>
       </div>
-      <div class="card-body">
+      <div class="card-body fixed-content">
         <div *ngIf="futureEvents">
           <ul>
             <li *ngFor="let event of futureEvents">
               <span class="name">{{event.eventName}}</span>
+              <span class="name">{{event.place}}</span>
               <span class="date">{{event.eventDate | date:'dd.MM.yyyy'}}</span>
               <span><a href="#">Osavoitjad</a></span>
               <span (click)="delete(event.id)"><img src="assets/remove.svg" class="deleteBtn"></span>
@@ -59,11 +60,12 @@
         <div class="card-header">
           <h4 class="headers">Toimunud uritused</h4>
         </div>
-        <div class="card-body">
+        <div class="card-body fixed-content">
           <div *ngIf="pastEvents">
             <ul>
               <li *ngFor="let event of pastEvents">
                 <span class="name">{{event.eventName}}</span>
+                <span class="name">{{event.place}}</span>
                 <span class="date">{{event.eventDate | date:'dd.MM.yyyy'}}</span>
                 <span><a href="#">Osavoitjad</a></span>
                 <span (click)="delete(event.id)"><img src="assets/remove.svg" class="deleteBtn"></span>
