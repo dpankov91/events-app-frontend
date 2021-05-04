@@ -10,8 +10,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {CommonModule, DatePipe} from "@angular/common";
 import {CreateEventPageComponent} from "./create-event-page/create-event-page.component";
 import {WelcomePageComponent} from "./welcome-page/welcome-page.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ParticipantsPageComponent } from './participants-page/participants-page.component';
+import { CreatePersonFormComponent } from './create-person-form/create-person-form.component';
+import { CreateCompanyFormComponent } from './create-company-form/create-company-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ParticipantsPageComponent } from './participants-page/participants-page
     FooterComponent,
     CreateEventPageComponent,
     WelcomePageComponent,
-    ParticipantsPageComponent
+    ParticipantsPageComponent,
+    CreatePersonFormComponent,
+    CreateCompanyFormComponent
   ],
     imports: [
         BrowserModule,
@@ -28,7 +32,8 @@ import { ParticipantsPageComponent } from './participants-page/participants-page
         NgbModule,
         HttpClientModule,
         CommonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule
     ],
   providers: [DatePipe, WelcomePageComponent],
   bootstrap: [AppComponent]

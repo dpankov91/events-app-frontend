@@ -73,3 +73,22 @@ ul li span1:nth-child(4) {
   color:#FA544F;
   text-decoration: underline;
 }
+.radioBtn{
+  margin-left: 200px;
+}
+.radioBtn2{
+  margin-right: 200px;
+}
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+  width: 100px;
+}
+
+.flex-child:first-child {
+  margin-right: 20px;
+}
+

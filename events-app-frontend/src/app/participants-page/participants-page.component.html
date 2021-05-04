@@ -31,18 +31,36 @@
            <li *ngFor="let person of selectedEventPersons">
              <span1 class="name">{{person.firstName}} {{person.lastName}}</span1>
              <span1 class="last-name">{{person.idNumber}}</span1>
-             <span1 class="name"><a routerLink="/participants">Vaata</a></span1>
+             <span1 class="name"><a (click)="goEditPerson(person)">Vaata</a></span1>
              <span1 class="delete" (click)="deletePerson(person.id)">Kustuta</span1>
            </li>
           <li *ngFor="let company of selectedEventCompanies">
             <span1 class="name">{{company.companyName}} </span1>
             <span1 class="last-name">{{company.companyCode}}</span1>
-            <span1 class="name"><a routerLink="/participants">Vaata</a></span1>
+            <span1 class="name"><a (click)="goEditCompany(company)">Vaata</a></span1>
             <span1 class="delete" (click)="deleteCompany(company.id)">Kustuta</span1>
           </li>
         </ul>
       </li>
       </div>
     </ul>
+  </div>
+  <div class="participants">
+    <h2>Osavõitjate lisamine</h2>
+    <div class="flex-container" style="margin-top: 30px;">
+      <div class="flex-child magenta form-check radioBtn">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Eraisik
+        </label>
+      </div>
+      <div class="flex-child green form-check radioBtn2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Ettevõte
+        </label>
+      </div>
+    </div>
+    <app-create-company-form></app-create-company-form>
   </div>
 </div>

@@ -1,5 +1,5 @@
 export interface CompanyModel {
-  id: number;
+  id?: number;
   companyName: string;
   companyCode: number;
   isCash: boolean;

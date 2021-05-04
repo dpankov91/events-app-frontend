@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from "../shared/services/event.service";
 import {WelcomePageComponent} from "../welcome-page/welcome-page.component";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {EventModel} from "../shared/models/eventModel";
 import {PersonModel} from "../shared/models/personModel";
@@ -26,7 +26,7 @@ export class ParticipantsPageComponent implements OnInit {
 
   constructor(private eventService: EventService, private welcomeComponent: WelcomePageComponent,
               private route: ActivatedRoute, private personService: PersonService,
-              private companyService: CompanyService) {}
+              private companyService: CompanyService, private router: Router) {}
 
   ngOnInit(): void {
     this.refresh();
@@ -60,5 +60,13 @@ export class ParticipantsPageComponent implements OnInit {
       .subscribe(() => {
         this.refresh();
       });
+  }
+
+  goEditCompany(company: CompanyModel) {
+    this.router.navigate(['/participants/edit-company', company.id])
+  }
+
+  goEditPerson(person: PersonModel) {
+    this.router.navigate(['/participants/edit-company', person.id])
   }
 }
