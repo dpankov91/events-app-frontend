@@ -31,13 +31,13 @@
            <li *ngFor="let person of selectedEventPersons">
              <span1 class="name">{{person.firstName}} {{person.lastName}}</span1>
              <span1 class="last-name">{{person.idNumber}}</span1>
-             <span1 class="name"><a (click)="goEditPerson(person)">Vaata</a></span1>
+             <span1 ><a (click)="goEditPerson(person)" class="linkEdit">Vaata</a></span1>
              <span1 class="delete" (click)="deletePerson(person.id)">Kustuta</span1>
            </li>
           <li *ngFor="let company of selectedEventCompanies">
             <span1 class="name">{{company.companyName}} </span1>
             <span1 class="last-name">{{company.companyCode}}</span1>
-            <span1 class="name"><a (click)="goEditCompany(company)">Vaata</a></span1>
+            <span1 ><a (click)="goEditCompany(company)" class="linkEdit">Vaata</a></span1>
             <span1 class="delete" (click)="deleteCompany(company.id)">Kustuta</span1>
           </li>
         </ul>

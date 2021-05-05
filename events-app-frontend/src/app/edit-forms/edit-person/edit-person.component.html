@@ -1,4 +1,14 @@
 <div class="container">
+  <div class="row upperDiv">
+    <div class="col-md-4 headText" style="background: #005AA1;">
+      <h1>Eraisik</h1>
+    </div>
+    <div class="col-md-8 p-0">
+      <img src="assets/libled.jpg" class="fixed-content">
+    </div>
+  </div>
+</div>
+<div class="container">
   <form class="submission-form" [formGroup]="personForm" (ngSubmit)="updatePerson()">
     <label for="first-name">Eesnimi: </label>
     <input type="text" id="first-name" formControlName="firstName">

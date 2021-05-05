@@ -17,6 +17,15 @@
   padding-top: 23px;
   color: #ffffff;
 }
+.linkEdit{
+  cursor: pointer;
+  color: #6D93D1;
+}
+.linkEdit:hover{
+  cursor: pointer;
+  color: #005AA1;
+  text-decoration: underline;
+}
 
 .participants{
   max-width: 900px;

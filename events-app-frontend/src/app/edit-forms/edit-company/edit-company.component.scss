@@ -30,3 +30,21 @@
   width: 80px;
   background: #C9C3C1;
 }
+.upperDiv{
+  height: 100px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.fixed-content {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.headText{
+  display: flex;
+  justify-content: center;
+  padding-top: 23px;
+  color: #ffffff;
+}
