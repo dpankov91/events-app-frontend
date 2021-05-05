@@ -48,11 +48,11 @@ export class EditPersonComponent implements OnInit {
         idNumber: this.personForm.get('idCode').value,
         isCash: this.personForm.get('isCash').value,
         additionalInfo: this.personForm.get('additionalInfo').value,
-        eventId: this.id
+        eventId: this.person.eventId
     }
-    console.log("Updated company:" + this.person)
+    console.log("Updated person:" + this.person)
     this.personService.updatePerson(this.person)
-      .subscribe(() => {  })
+      .subscribe(() => { this.router.navigateByUrl('/participants/' + this.person.eventId)})
   }
 
   setUpForm(){

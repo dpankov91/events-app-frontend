@@ -82,11 +82,11 @@ export class ParticipantsPageComponent implements OnInit {
   }
 
   goEditCompany(company: CompanyModel) {
-    this.router.navigate(['/participants/edit-company', company.id])
+    this.router.navigate(['/participants/edit-company/', company.id])
   }
 
   goEditPerson(person: PersonModel) {
-    this.router.navigate(['/participants/edit-person', person.id])
+    this.router.navigate(['/participants/edit-person/', person.id])
   }
 
   saveCompany() {

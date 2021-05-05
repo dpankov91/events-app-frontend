@@ -44,11 +44,11 @@ export class EditCompanyComponent implements OnInit {
         companyCode: this.companyForm.get('companyCode').value,
         additionalInfo: this.companyForm.get('additionalInfo').value,
         isCash: this.companyForm.get('isCash').value,
-        eventId: this.id
+        eventId: this.company.eventId
       }
     console.log("Updated company:" + this.company)
     this.companyService.updateCompany(this.company)
-      .subscribe(() => {  })
+      .subscribe(() => { this.router.navigateByUrl('/participants/' + this.company.eventId) })
   }
 
   setUpForm(){

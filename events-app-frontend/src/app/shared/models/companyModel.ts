@@ -4,5 +4,5 @@ export interface CompanyModel {
   companyCode: number;
   isCash: boolean;
   additionalInfo: string;
-  eventId: number;
+  eventId?: number;
 }
