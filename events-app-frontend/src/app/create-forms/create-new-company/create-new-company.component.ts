@@ -43,7 +43,7 @@ export class CreateNewCompanyComponent implements OnInit {
     console.log(this.company + this.companyForm.get('isCash').value)
     this.companyService.createCompany(this.company)
       .subscribe(() => {
-        this.companyForm.reset()
+        location.reload()
       });
   }
 }
