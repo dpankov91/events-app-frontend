@@ -26,7 +26,6 @@ export class CreateNewCompanyComponent implements OnInit {
               private _location: Location) { }
 
   ngOnInit(): void {
-
     this.id = parseInt(this.route.snapshot.paramMap.get('id'))
   }
 

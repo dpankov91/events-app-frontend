@@ -7,8 +7,9 @@
     <label for="idCode">Isikukood: </label>
     <input type="number" id="idCode" formControlName="idCode">
     <label for="idCode">Maksmisviis: </label>
-    <select name="isCash" id="isCash" (change)="changePayMethod($event)">
-      <option *ngFor="let method of isCashList" [ngValue]="method">{{method}}</option>
+    <select name="isCash" id="isCash" formControlName="isCash">
+      <option value="True">Sularaha</option>
+      <option value="False">Pangakaart</option>
     </select>
     <label for="additional-info">Lisainfo: </label>
     <textarea id="additional-info" formControlName="additionalInfo"></textarea>

@@ -46,14 +46,4 @@ export class CreateNewPersonComponent implements OnInit {
         this.personForm.reset()
       });
   }
-
-  changePayMethod(e: any) {
-    this.personForm.get('isCash').setValue(e.target.value, {})
-    if(this.personForm.get('isCash').value == 'Sularaha'){
-      this.personForm.get('isCash').setValue(true);
-    }
-    if(this.personForm.get('isCash').value == 'Pangakaart'){
-      this.personForm.get('isCash').setValue(false);
-    }
-  }
 }
