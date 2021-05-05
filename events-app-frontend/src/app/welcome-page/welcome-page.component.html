@@ -2,7 +2,7 @@
   <div class="row gap100" >
     <div class="col-md-6 welcomeTextDiv">
       <p id="textP">   Tere! Meil on hea meel teiega kohtuda meie ägedas rakenduses, kus saate juhtida erinevaid
-        sündmusi. Sündmuste loomise ja kustutamise funktsioonid,ning osalejate nägemiseks ja nende muutmiseks. Nautige</p>
+        üritusi. Üritusi loomise ja kustutamise funktsioonid,ning osalejate nägemiseks ja nende muutmiseks. Nautige</p>
     </div>
     <div class="col-md-6 p-0">
       <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
@@ -37,7 +37,7 @@
   <div class="col-md-6">
     <div class="card border">
       <div class="card-header">
-        <h4 class="headers">Tulevased uritused</h4>
+        <h4 class="headers">Tulevased üritused</h4>
       </div>
       <div class="card-body fixed-content">
         <div *ngIf="futureEvents">
@@ -46,7 +46,7 @@
               <span class="name">{{event.eventName}}</span>
               <span class="name">{{event.place}}</span>
               <span class="date">{{event.eventDate | date:'dd.MM.yyyy'}}</span>
-              <span ><a (click)="selectEvent(event)" class="linkToParticipants">Osavoitjad</a></span>
+              <span ><a (click)="selectEvent(event)" class="linkToParticipants">Osavõitjad</a></span>
               <span (click)="delete(event.id)"><img src="assets/remove.svg" class="deleteBtn"></span>
             </li>
           </ul>
@@ -57,7 +57,7 @@
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
-          <h4 class="headers">Toimunud uritused</h4>
+          <h4 class="headers">Toimunud üritused</h4>
         </div>
         <div class="card-body fixed-content">
             <ul>
@@ -65,7 +65,7 @@
                 <span class="name">{{event.eventName}}</span>
                 <span class="name">{{event.place}}</span>
                 <span class="date">{{event.eventDate | date:'dd.MM.yyyy'}}</span>
-                <span><a (click)="selectEvent(event)" class="linkToParticipants">Osavoitjad</a></span>
+                <span><a (click)="selectEvent(event)" class="linkToParticipants">Osavõitjad</a></span>
                 <span (click)="delete(event.id)"><img src="assets/remove.svg" class="deleteBtn"></span>
               </li>
             </ul>
