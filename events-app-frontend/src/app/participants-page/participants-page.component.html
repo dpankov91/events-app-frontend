@@ -49,18 +49,25 @@
     <h2>Osavõitjate lisamine</h2>
     <div class="flex-container" style="margin-top: 30px;">
       <div class="flex-child magenta form-check radioBtn">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
+        <input class="form-check-input" type="radio" name="person" id="personId"
+               (change)="changeForm($event)" checked>
+        <label class="form-check-label" for="personId">
           Eraisik
         </label>
       </div>
       <div class="flex-child green form-check radioBtn2">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
+        <input class="form-check-input" type="radio" name="person" id="cpn"
+               (change)="changeForm($event)">
+        <label class="form-check-label" for="cpn">
           Ettevõte
         </label>
       </div>
     </div>
-    <app-create-company-form></app-create-company-form>
+    <div *ngIf="!isCompany" >
+      <app-create-new-person></app-create-new-person>
+    </div>
+    <div *ngIf="isCompany" >
+      <app-create-new-company></app-create-new-company>
+    </div>
   </div>
 </div>

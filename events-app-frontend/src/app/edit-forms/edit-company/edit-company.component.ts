@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import {CompanyModel} from "../../shared/models/companyModel";
 import {FormControl, FormGroup} from "@angular/forms";
+import {CompanyService} from "../../shared/services/company.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {CompanyService} from "../shared/services/company.service";
-import {CompanyModel} from "../shared/models/companyModel";
-import {Location} from '@angular/common';
+import {Location} from "@angular/common";
 
 @Component({
-  selector: 'app-create-company-form',
-  templateUrl: './create-company-form.component.html',
-  styleUrls: ['./create-company-form.component.scss']
+  selector: 'app-edit-company',
+  templateUrl: './edit-company.component.html',
+  styleUrls: ['./edit-company.component.scss']
 })
-export class CreateCompanyFormComponent implements OnInit {
+export class EditCompanyComponent implements OnInit {
   company: CompanyModel
   isCash: boolean | undefined
   isCashList: any = ['Sularaha', 'Pangakaart']
@@ -40,26 +40,26 @@ export class CreateCompanyFormComponent implements OnInit {
   }
 
   updateCompany() {
-  if(this.companyForm.get('isCash').value == 'Sularaha') {
-    this.company = {
-      id: this.company.id,
-      companyName: this.companyForm.get('companyName').value,
-      companyCode: this.companyForm.get('companyCode').value,
-      additionalInfo: this.companyForm.get('additionalInfo').value,
-      isCash: true,
-      eventId: this.id
+    if(this.companyForm.get('isCash').value == 'Sularaha') {
+      this.company = {
+        id: this.company.id,
+        companyName: this.companyForm.get('companyName').value,
+        companyCode: this.companyForm.get('companyCode').value,
+        additionalInfo: this.companyForm.get('additionalInfo').value,
+        isCash: true,
+        eventId: this.id
+      }
     }
-  }
-  else if(this.companyForm.get('isCash').value == 'Pangakaart'){
-    this.company = {
-      id: this.company.id,
-      companyName: this.companyForm.get('companyName').value,
-      companyCode: this.companyForm.get('companyCode').value,
-      additionalInfo: this.companyForm.get('additionalInfo').value,
-      isCash: false,
-      eventId: this.id
+    else if(this.companyForm.get('isCash').value == 'Pangakaart'){
+      this.company = {
+        id: this.company.id,
+        companyName: this.companyForm.get('companyName').value,
+        companyCode: this.companyForm.get('companyCode').value,
+        additionalInfo: this.companyForm.get('additionalInfo').value,
+        isCash: false,
+        eventId: this.id
+      }
     }
-  }
     console.log("Updated company:" + this.company)
     this.companyService.updateCompany(this.company)
       .subscribe(() => {  })

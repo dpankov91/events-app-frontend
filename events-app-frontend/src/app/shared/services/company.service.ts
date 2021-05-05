@@ -34,7 +34,12 @@ export class CompanyService {
     return this.http.post<CompanyModel>(this.apiUrl, company);
   }
 
-  getCompanyById(id: number): Observable<CompanyModel>{
-    return this.http.get<CompanyModel>(this.apiUrl + '/' + id);
+  async getCompanyById(id: number): Promise<CompanyModel>{
+    const uspromise = await this.http.get<CompanyModel>(this.apiUrl + '/' + id).toPromise();
+    return uspromise as CompanyModel;
+  }
+
+  updateCompany(company: CompanyModel): Observable<CompanyModel> {
+    return this.http.put<CompanyModel>(this.apiUrl + '/' + company.id, company);
   }
 }

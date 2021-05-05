@@ -5,13 +5,15 @@ import {CreateEventPageComponent} from "./create-event-page/create-event-page.co
 import {ParticipantsPageComponent} from "./participants-page/participants-page.component";
 import {CreatePersonFormComponent} from "./create-person-form/create-person-form.component";
 import {CreateCompanyFormComponent} from "./create-company-form/create-company-form.component";
+import {EditPersonComponent} from "./edit-forms/edit-person/edit-person.component";
+import {EditCompanyComponent} from "./edit-forms/edit-company/edit-company.component";
 
 const routes: Routes = [
   {path: '', component: WelcomePageComponent},
   {path: 'create-event', component: CreateEventPageComponent},
   {path: 'participants/:id', component: ParticipantsPageComponent},
-  {path: 'participants/edit-person/:id', component: CreatePersonFormComponent},
-  {path: 'participants/edit-company/:id', component: CreateCompanyFormComponent}
+  {path: 'participants/edit-person/:id', component: EditPersonComponent},
+  {path: 'participants/edit-company/:id', component: EditCompanyComponent}
 ];
 
 @NgModule({

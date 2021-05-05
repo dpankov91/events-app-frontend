@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {EventModel} from "../models/eventModel";
 import {PersonModel} from "../models/personModel";
 import {Observable} from "rxjs";
+import {CompanyModel} from "../models/companyModel";
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,12 @@ export class PersonService {
     return this.http.post<PersonModel>(this.apiUrl, person);
   }
 
-  getPersonById(id: number): Observable<PersonModel>{
-    return this.http.get<PersonModel>(this.apiUrl + '/' + id);
+  async getPersonById(id: number): Promise<PersonModel>{
+    const uspromise = await this.http.get<PersonModel>(this.apiUrl + '/' + id).toPromise();
+    return uspromise as PersonModel;
+  }
+
+  updatePerson(person: PersonModel): Observable<PersonModel> {
+    return this.http.put<PersonModel>(this.apiUrl + '/' + person.id, person);
   }
 }

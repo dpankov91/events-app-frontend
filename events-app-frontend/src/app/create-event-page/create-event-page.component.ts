@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {EventService} from "../shared/services/event.service";
 import {Router} from "@angular/router";
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-create-event-page',
@@ -18,7 +19,7 @@ export class CreateEventPageComponent implements OnInit {
   })
 
   constructor(private eventService: EventService,
-              private router: Router) { }
+              private router: Router, private _location: Location) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +33,6 @@ export class CreateEventPageComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigateByUrl('');
+    this._location.back();
   }
 }

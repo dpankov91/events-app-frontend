@@ -14,6 +14,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ParticipantsPageComponent } from './participants-page/participants-page.component';
 import { CreatePersonFormComponent } from './create-person-form/create-person-form.component';
 import { CreateCompanyFormComponent } from './create-company-form/create-company-form.component';
+import { CreateNewCompanyComponent } from './create-forms/create-new-company/create-new-company.component';
+import { CreateNewPersonComponent } from './create-forms/create-new-person/create-new-person.component';
+import { EditCompanyComponent } from './edit-forms/edit-company/edit-company.component';
+import {EditPersonComponent} from "./edit-forms/edit-person/edit-person.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { CreateCompanyFormComponent } from './create-company-form/create-company
     WelcomePageComponent,
     ParticipantsPageComponent,
     CreatePersonFormComponent,
-    CreateCompanyFormComponent
+    CreateCompanyFormComponent,
+    CreateNewCompanyComponent,
+    CreateNewPersonComponent,
+    EditPersonComponent,
+    EditCompanyComponent,
   ],
     imports: [
         BrowserModule,
