@@ -43,7 +43,7 @@ export class CreateNewPersonComponent implements OnInit {
     console.log(this.person + this.personForm.get('isCash').value)
     this.personService.createPerson(this.person)
       .subscribe(() => {
-        this.personForm.reset()
+        location.reload()
       });
   }
 }
