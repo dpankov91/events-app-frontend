@@ -14,8 +14,6 @@ import {PersonService} from "../../shared/services/person.service";
 })
 export class EditPersonComponent implements OnInit {
   person: PersonModel
-  isCash: boolean | undefined
-  isCashList: any = ['Sularaha', 'Pangakaart']
   id: number | undefined
   personForm = new FormGroup({
     firstName: new FormControl(''),
@@ -43,27 +41,14 @@ export class EditPersonComponent implements OnInit {
   }
 
   updatePerson() {
-    if(this.personForm.get('isCash').value == 'Sularaha') {
       this.person = {
         id: this.person.id,
         firstName: this.personForm.get('firstName').value,
         lastName: this.personForm.get('lastName').value,
         idNumber: this.personForm.get('idCode').value,
-        isCash: true,
+        isCash: this.personForm.get('isCash').value,
         additionalInfo: this.personForm.get('additionalInfo').value,
         eventId: this.id
-      }
-    }
-    else if(this.personForm.get('isCash').value == 'Pangakaart'){
-      this.person = {
-        id: this.person.id,
-        firstName: this.personForm.get('firstName').value,
-        lastName: this.personForm.get('lastName').value,
-        idNumber: this.personForm.get('idCode').value,
-        isCash: false,
-        additionalInfo: this.personForm.get('additionalInfo').value,
-        eventId: this.id
-      }
     }
     console.log("Updated company:" + this.person)
     this.personService.updatePerson(this.person)
@@ -71,26 +56,13 @@ export class EditPersonComponent implements OnInit {
   }
 
   setUpForm(){
-    console.log("setting up form " + this.person.isCash)
-    if(this.person.isCash == true){
       this.personForm.patchValue({
         firstName: this.person.firstName,
         lastName: this.person.lastName,
         idCode: this.person.idNumber,
-        isCash: this.isCashList[0],
+        isCash: this.person.isCash,
         additionalInfo: this.person.additionalInfo,
       });
-    }
-    else{
-      this.personForm.patchValue({
-        firstName: this.person.firstName,
-        lastName: this.person.lastName,
-        idCode: this.person.idNumber,
-        isCash: this.isCashList[1],
-        additionalInfo: this.person.additionalInfo,
-      });
-    }
-    console.log("after set up: " + this.personForm.get('isCash').value)
   }
 
   goBack() {

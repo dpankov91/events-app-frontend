@@ -12,8 +12,6 @@ import {Location} from "@angular/common";
 })
 export class EditCompanyComponent implements OnInit {
   company: CompanyModel
-  isCash: boolean | undefined
-  isCashList: any = ['Sularaha', 'Pangakaart']
   id: number | undefined
   companyForm = new FormGroup({
     companyName: new FormControl(''),
@@ -40,26 +38,14 @@ export class EditCompanyComponent implements OnInit {
   }
 
   updateCompany() {
-    if(this.companyForm.get('isCash').value == 'Sularaha') {
       this.company = {
         id: this.company.id,
         companyName: this.companyForm.get('companyName').value,
         companyCode: this.companyForm.get('companyCode').value,
         additionalInfo: this.companyForm.get('additionalInfo').value,
-        isCash: true,
+        isCash: this.companyForm.get('isCash').value,
         eventId: this.id
       }
-    }
-    else if(this.companyForm.get('isCash').value == 'Pangakaart'){
-      this.company = {
-        id: this.company.id,
-        companyName: this.companyForm.get('companyName').value,
-        companyCode: this.companyForm.get('companyCode').value,
-        additionalInfo: this.companyForm.get('additionalInfo').value,
-        isCash: false,
-        eventId: this.id
-      }
-    }
     console.log("Updated company:" + this.company)
     this.companyService.updateCompany(this.company)
       .subscribe(() => {  })
@@ -67,34 +53,15 @@ export class EditCompanyComponent implements OnInit {
 
   setUpForm(){
     console.log("setting up form " + this.company.isCash)
-    if(this.company.isCash == true){
       this.companyForm.patchValue({
         companyName: this.company.companyName,
         companyCode: this.company.companyCode,
-        isCash: this.isCashList[0],
+        isCash: this.company.isCash,
         additionalInfo: this.company.additionalInfo,
       });
-    }
-    else{
-      this.companyForm.patchValue({
-        companyName: this.company.companyName,
-        companyCode: this.company.companyCode,
-        isCash: this.isCashList[1],
-        additionalInfo: this.company.additionalInfo,
-      });
-    }
     console.log("after set up: " + this.companyForm.get('isCash').value)
   }
 
-  changePayMethod(e: any) {
-    this.companyForm.get('isCash').setValue(e.target.value, {})
-    if(this.companyForm.get('isCash').value == 'Sularaha'){
-      this.companyForm.get('isCash').setValue(true);
-    }
-    if(this.companyForm.get('isCash').value == 'Pangakaart'){
-      this.companyForm.get('isCash').setValue(false);
-    }
-  }
   goBack() {
     this._location.back();
   }

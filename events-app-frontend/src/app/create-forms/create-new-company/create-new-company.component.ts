@@ -13,7 +13,6 @@ import {Location} from "@angular/common";
 export class CreateNewCompanyComponent implements OnInit {
   company: CompanyModel
   isCash: boolean | undefined
-  isCashList: any = ['Sularaha', 'Pangakaart']
   id: number | undefined
   companyForm = new FormGroup({
     companyName: new FormControl(''),
@@ -46,15 +45,5 @@ export class CreateNewCompanyComponent implements OnInit {
       .subscribe(() => {
         this.companyForm.reset()
       });
-  }
-
-  changePayMethod(e: any) {
-    this.companyForm.get('isCash').setValue(e.target.value, {})
-    if(this.companyForm.get('isCash').value == 'Sularaha'){
-      this.companyForm.get('isCash').setValue(true);
-    }
-    if(this.companyForm.get('isCash').value == 'Pangakaart'){
-      this.companyForm.get('isCash').setValue(false);
-    }
   }
 }
