@@ -63,10 +63,10 @@
         </label>
       </div>
     </div>
-    <div *ngIf="!isCompany" >
+    <div *ngIf="!isCompany" class="forms">
       <app-create-new-person></app-create-new-person>
     </div>
-    <div *ngIf="isCompany" >
+    <div *ngIf="isCompany" class="forms">
       <app-create-new-company></app-create-new-company>
     </div>
   </div>

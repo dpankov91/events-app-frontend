@@ -12,7 +12,6 @@ import {CreateEventPageComponent} from "./create-event-page/create-event-page.co
 import {WelcomePageComponent} from "./welcome-page/welcome-page.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ParticipantsPageComponent } from './participants-page/participants-page.component';
-import { CreatePersonFormComponent } from './create-person-form/create-person-form.component';
 import { CreateCompanyFormComponent } from './create-company-form/create-company-form.component';
 import { CreateNewCompanyComponent } from './create-forms/create-new-company/create-new-company.component';
 import { CreateNewPersonComponent } from './create-forms/create-new-person/create-new-person.component';
@@ -27,7 +26,6 @@ import {EditPersonComponent} from "./edit-forms/edit-person/edit-person.componen
     CreateEventPageComponent,
     WelcomePageComponent,
     ParticipantsPageComponent,
-    CreatePersonFormComponent,
     CreateCompanyFormComponent,
     CreateNewCompanyComponent,
     CreateNewPersonComponent,

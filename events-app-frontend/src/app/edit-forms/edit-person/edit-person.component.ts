@@ -85,7 +85,7 @@ export class EditPersonComponent implements OnInit {
       this.personForm.patchValue({
         firstName: this.person.firstName,
         lastName: this.person.lastName,
-        idNumber: this.person.idNumber,
+        idCode: this.person.idNumber,
         isCash: this.isCashList[1],
         additionalInfo: this.person.additionalInfo,
       });
